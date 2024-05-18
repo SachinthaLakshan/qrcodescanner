@@ -80,7 +80,7 @@ const Scanner = () => {
 
     return (
         <Container>
-            <h1>Generate phone numbers </h1>
+            <h1 className="mb-4">Generate phone numbers </h1>
             <Form onSubmit={formSubmit}>
                 <Row className="mb-3 d-flex responsie-flex">
                     <Form.Group as={Col} controlId="formGridState">
