@@ -105,7 +105,7 @@ const Scanner = () => {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group> */}
 
-                <Button  variant="success" type="submit">
+                <Button  variant="success" className="btncolor" type="submit">
                     Download Excel
                 </Button>
             </Form>
