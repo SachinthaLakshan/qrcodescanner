@@ -78,35 +78,11 @@ const Scanner = () => {
     };
 
 
-    const handleSheetDownload = () => {
-        const json_data = [];
-
-        currentEvent.gusts.find((guest) => {
-            let obj = { Name: guest.name, Guest_ID: guest.guestId, Message: `Click here for RSVP (පැමිණීම තහවුරු කිරීම සදහා පිවිසෙන්න) 👉 www.evite.lk/guest?id=${guest.guestId}` };
-            json_data.push(obj);
-        })
-
-        const worksheet = XLSX.utils.json_to_sheet(json_data);
-        const workbook = XLSX.utils.book_new();
-
-        XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
-
-        const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
-        const excelBlob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(excelBlob);
-        link.download = 'my-data.xlsx';
-        link.click();
-
-    };
-
     return (
         <Container>
             <h1>Generate phone numbers </h1>
             <Form onSubmit={formSubmit}>
-
-
-                <Row className="mb-3">
+                <Row className="mb-3 d-flex responsie-flex">
                     <Form.Group as={Col} controlId="formGridState">
                         <Form.Label>districts</Form.Label>
                         <Form.Select value={selectedArea} onChange={(e) => setSelectedArea(e.target.value)} defaultValue="Choose...">

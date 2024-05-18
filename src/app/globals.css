@@ -25,3 +25,10 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+@media screen and (max-width: 990px) {
+  .responsie-flex{
+    flex-direction: column;
+  }
+}
